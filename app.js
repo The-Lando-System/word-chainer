@@ -15,6 +15,7 @@ try {
 }
 
 app.use(morgan('dev'));
+app.use(bodyParser({limit: '3mb'}));
 app.use(bodyParser.urlencoded({ 'extended':'true' }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type:'application/vnd.api+json' }));
