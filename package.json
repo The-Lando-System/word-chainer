@@ -1,0 +1,19 @@
+{
+  "name": "word-service",
+  "version": "1.0.0",
+  "description": "Words stuff idk",
+  "author": "The-Lando-System",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "debug": "latest",
+    "nodemon": "latest"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "nodemon ./bin/www"
+  }
+}
