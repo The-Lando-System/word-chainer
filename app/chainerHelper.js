@@ -7,13 +7,13 @@ var clone = function(obj) {
   return copy;
 };
 
-var getLongestChain = function(chains){
+var findLongestChain = function(chains){
 
-  var chain = {words:[],chainLength:0};
+  var longestChain = {words:[],chainLength:0};
 
   for (var word in chains){
 
-    var longestChain = [word];
+    var longestChainForWord = [word];
     var testChain = [word];
     var chainArray = chains[word];
 
@@ -21,8 +21,8 @@ var getLongestChain = function(chains){
       if (chainArray[i].length>testChain[testChain.length-1].length){
         testChain.push(chainArray[i]);
       } else {
-        if (testChain.length>longestChain.length){
-          longestChain = clone(testChain);
+        if (testChain.length>longestChainForWord.length){
+          longestChainForWord = clone(testChain);
         }
         var elemsToSplice = (testChain[testChain.length-1].length-chainArray[i].length)+1;
         testChain.splice(testChain.length-elemsToSplice,elemsToSplice);
@@ -30,18 +30,18 @@ var getLongestChain = function(chains){
       }
     }
 
-    if (testChain.length>longestChain.length){
-      longestChain = clone(testChain);
+    if (testChain.length>longestChainForWord.length){
+      longestChainForWord = clone(testChain);
     }
 
-    if (longestChain.length>chain.chainLength){
-      chain.words = longestChain;
-      chain.chainLength = longestChain.length;
+    if (longestChainForWord.length>longestChain.chainLength){
+      longestChain.words = longestChainForWord;
+      longestChain.chainLength = longestChainForWord.length;
     }
 
   }
 
-  return chain;
+  return longestChain;
 };
 
-module.exports.getLongestChain = getLongestChain;
+module.exports.findLongestChain = findLongestChain;
