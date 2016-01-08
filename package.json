@@ -7,7 +7,8 @@
     "body-parser": "latest",
     "express": "latest",
     "method-override": "latest",
-    "mongoose": "latest",
+    "redis": "latest",
+    "uuid": "latest",
     "morgan": "latest",
     "debug": "latest",
     "nodemon": "latest"

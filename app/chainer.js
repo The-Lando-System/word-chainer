@@ -68,7 +68,6 @@ var findAllChains = function(dictionary){
  * and will return the longest chain with the time it took to compute it
  **/
 var getLongestChain = function(dictionary){
-  console.log("in the chainer");
   var startTime = new Date().getTime();
   var longestChain = chainerHelper.findLongestChain(findAllChains(dictionary));
   var endTime = new Date().getTime();
