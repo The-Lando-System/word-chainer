@@ -7,6 +7,8 @@ module.exports = function(app) {
 	  next();
 	});
 	app.post('/longest-chain', function(req,res){
-		res.send(chainer.getLongestChain(req.body));
+		var words = req.body;
+		res.send({msg:"ok"});
+		chainer.getLongestChain(words);
 	});
 };
